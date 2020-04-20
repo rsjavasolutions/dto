@@ -21,6 +21,10 @@ public class Question extends EntityBase {
     public Question() {
     }
 
+    public Question(String content) {
+        this.content = content;
+    }
+
     public Test getTest() {
         return test;
     }

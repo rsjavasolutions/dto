@@ -18,6 +18,10 @@ public class Test extends EntityBase {
     public Test() {
     }
 
+    public Test(String name) {
+        this.name = name;
+    }
+
     public void addQuestion(Question question){
         questionList.add(question);
         question.setTest(this);

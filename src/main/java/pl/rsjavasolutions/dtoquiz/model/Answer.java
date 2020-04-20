@@ -21,6 +21,11 @@ public class Answer extends EntityBase {
     public Answer() {
     }
 
+    public Answer(String name, Boolean correct) {
+        this.name = name;
+        this.correct = correct;
+    }
+
     public Question getQuestion() {
         return question;
     }

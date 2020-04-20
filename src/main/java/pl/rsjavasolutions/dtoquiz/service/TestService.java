@@ -15,7 +15,11 @@ public class TestService {
         this.testRepository = testRepository;
     }
 
-    public Test getTestById(Integer id){
+    public Test getById(Integer id){
         return testRepository.findById(id).get();
+    }
+
+    public Test save(Test test){
+        return testRepository.save(test);
     }
 }

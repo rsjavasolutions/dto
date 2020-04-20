@@ -1,6 +1,10 @@
 package pl.rsjavasolutions.dtoquiz.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -9,8 +13,20 @@ public class Answer extends EntityBase {
 
     private String name;
     private Boolean correct;
+    @ManyToOne
+    @JoinColumn(name = "question_id")
+    @JsonIgnore
+    private Question question;
 
     public Answer() {
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
     public String getName() {

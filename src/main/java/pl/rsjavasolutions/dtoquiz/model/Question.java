@@ -45,4 +45,12 @@ public class Question extends EntityBase {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public List<Answer> getAnswerList() {
+        return answerList;
+    }
+
+    public void setAnswerList(List<Answer> answerList) {
+        this.answerList = answerList;
+    }
 }

@@ -1,9 +1,8 @@
 package pl.rsjavasolutions.dtoquiz.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,8 +13,20 @@ public class Question extends EntityBase {
     private String content;
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<Answer> answerList = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "test_id")
+    @JsonIgnore
+    private Test test;
 
     public Question() {
+    }
+
+    public Test getTest() {
+        return test;
+    }
+
+    public void setTest(Test test) {
+        this.test = test;
     }
 
     public void addAnswer(Answer answer){

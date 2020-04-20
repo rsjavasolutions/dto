@@ -1,5 +1,6 @@
 package pl.rsjavasolutions.dtoquiz.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -11,7 +12,7 @@ import java.util.List;
 public class Test extends EntityBase {
 
     private String name;
-    @OneToMany(mappedBy = "test")
+    @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     private List<Question> questionList = new ArrayList<>();
 
     public Test() {

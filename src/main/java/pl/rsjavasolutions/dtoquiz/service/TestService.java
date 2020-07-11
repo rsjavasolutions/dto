@@ -19,11 +19,8 @@ public class TestService {
     }
 
     public Test getById(Integer id) {
-        Optional<Test> optionalTest = testRepository.findById(id);
-        if (optionalTest.isPresent()) {
-            return optionalTest.get();
-        }
-        throw new InvalidNumberException(id);
+        return testRepository.findById(id)
+                .orElseThrow(() -> new InvalidNumberException(id));
     }
 
     public Test save(Test test){

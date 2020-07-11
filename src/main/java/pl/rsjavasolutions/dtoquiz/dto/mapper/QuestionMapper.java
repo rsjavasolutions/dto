@@ -2,6 +2,7 @@ package pl.rsjavasolutions.dtoquiz.dto.mapper;
 
 import org.springframework.stereotype.Component;
 import pl.rsjavasolutions.dtoquiz.dto.QuestionDto;
+import pl.rsjavasolutions.dtoquiz.model.Answer;
 import pl.rsjavasolutions.dtoquiz.model.Question;
 
 import java.util.List;
@@ -28,7 +29,6 @@ public class QuestionMapper {
 
     private String getCorrectAnswer(Question question){
         return question.getAnswerList().stream()
-                .filter(answer -> answer.getCorrect())
                 .map(answer -> answer.getName())
                 .findFirst().get();
     }

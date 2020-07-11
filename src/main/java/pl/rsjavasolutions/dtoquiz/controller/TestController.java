@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.rsjavasolutions.dtoquiz.dto.TestDto;
 import pl.rsjavasolutions.dtoquiz.dto.mapper.TestMapper;
-import pl.rsjavasolutions.dtoquiz.model.Test;
 import pl.rsjavasolutions.dtoquiz.service.TestService;
 
 @RestController
